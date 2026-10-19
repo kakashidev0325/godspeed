@@ -7,15 +7,15 @@
 }
 
 :root {
-  --lime: #d4ff00;
-  --lime-hot: #e6ff4d;
-  --lime-deep: #b8e600;
-  --ink: #14141c;
-  --ink-soft: #2a2a36;
-  --muted: #5c5c6a;
-  --paper: #f7f8f2;
+  --lime: #ffb21a;
+  --lime-hot: #ffc94d;
+  --lime-deep: #e8590c;
+  --ink: #1a1009;
+  --ink-soft: #2b1a0e;
+  --muted: #6b5a4a;
+  --paper: #fff5e4;
   --white: #ffffff;
-  --font-display: "Syne", sans-serif;
+  --font-display: "Anton", Impact, "Arial Narrow Bold", sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --header-h: 68px;
@@ -24,6 +24,7 @@
 
 html {
   scroll-behavior: smooth;
+  font-synthesis: none;
 }
 
 body {
@@ -78,14 +79,14 @@ body {
   right: 0;
   z-index: 100;
   height: var(--header-h);
-  background: rgba(212, 255, 0, 0.92);
+  background: rgba(255, 178, 26, 0.92);
   backdrop-filter: blur(12px);
   border-bottom: var(--border);
   transition: background 0.25s, box-shadow 0.25s;
 }
 
 .site-header.scrolled {
-  background: rgba(212, 255, 0, 0.97);
+  background: rgba(255, 178, 26, 0.97);
   box-shadow: 0 8px 0 rgba(20, 20, 28, 0.06);
 }
 
@@ -521,7 +522,7 @@ body {
 }
 
 .about .eyebrow {
-  color: rgba(212, 255, 0, 0.55);
+  color: rgba(255, 178, 26, 0.55);
 }
 
 .about .section-text {
@@ -636,7 +637,7 @@ body {
 }
 
 .chart-section .eyebrow {
-  color: rgba(212, 255, 0, 0.5);
+  color: rgba(255, 178, 26, 0.5);
 }
 
 .chart-section .section-sub {
@@ -645,7 +646,7 @@ body {
 
 .chart-frame {
   border: 2px solid var(--lime);
-  background: #101018;
+  background: #140c06;
   min-height: 480px;
   overflow: hidden;
 }
@@ -673,7 +674,7 @@ body {
 
 .chart-placeholder code {
   color: var(--lime);
-  background: rgba(212, 255, 0, 0.1);
+  background: rgba(255, 178, 26, 0.1);
   padding: 0.1rem 0.4rem;
 }
 
@@ -1043,6 +1044,17 @@ body {
   font-size: 0.85rem;
   color: var(--ink);
   font-weight: 600;
+  min-width: 0;
+  word-break: break-all;
+}
+
+.hero-copy {
+  min-width: 0;
+}
+
+.contract-pill {
+  min-width: 0;
+  max-width: 100%;
 }
 
 .hero-aside {
@@ -1247,7 +1259,7 @@ body {
 }
 
 .stats .section-title { color: var(--white); }
-.stats .eyebrow { color: rgba(212, 255, 0, 0.55); }
+.stats .eyebrow { color: rgba(255, 178, 26, 0.55); }
 .stats .section-sub { color: rgba(255, 255, 255, 0.5); }
 
 .stats .section-title .accent,
@@ -1274,7 +1286,7 @@ body {
 }
 
 .stat-card:hover {
-  background: rgba(212, 255, 0, 0.06);
+  background: rgba(255, 178, 26, 0.06);
   transform: translateY(-3px);
 }
 
@@ -1378,7 +1390,7 @@ body {
 }
 
 .gallery-section .section-title { color: var(--white); }
-.gallery-section .eyebrow { color: rgba(212, 255, 0, 0.5); }
+.gallery-section .eyebrow { color: rgba(255, 178, 26, 0.5); }
 .gallery-section .section-sub { color: rgba(255, 255, 255, 0.5); }
 
 .gallery {
@@ -1556,13 +1568,6 @@ body {
   white-space: nowrap;
 }
 
-.loot__stats div:nth-child(2) strong {
-  white-space: normal;
-  max-width: 8.2ch;
-  font-size: clamp(0.95rem, 8.5cqi, 1.2rem);
-  line-height: 0.95;
-}
-
 .token-ca {
   display: flex;
   align-items: center;
@@ -1688,5 +1693,180 @@ body {
 
   .hero-aside {
     order: -1;
+  }
+}
+
+/* ── Meme theme ── */
+.nav-wordmark,
+.hero-brand,
+.hero-title,
+.hero-chip,
+.section-title,
+.step-num,
+.step h3,
+.avatar,
+.stat-value,
+.pillar h3,
+.gallery-cta p,
+.tri-card strong,
+.loot__stats strong,
+.footer-brand strong,
+.footer-tagline {
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+.nav-wordmark {
+  font-size: 1.6rem;
+}
+
+.hero-split {
+  background:
+    radial-gradient(circle at 82% 18%, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0) 38%),
+    linear-gradient(165deg, var(--lime-hot) 0%, var(--lime) 48%, #ff8a1a 100%);
+}
+
+.hero-copy .hero-brand,
+.hero-copy .hero-brand .accent,
+.section-title {
+  color: var(--white);
+  -webkit-text-stroke: 2px var(--ink);
+  paint-order: stroke fill;
+  text-shadow: 4px 4px 0 var(--ink);
+  text-transform: uppercase;
+  line-height: 1.02;
+}
+
+.hero-copy .hero-brand {
+  font-size: clamp(3rem, 9vw, 5.6rem);
+  -webkit-text-stroke-width: 3px;
+}
+
+.section-title .accent {
+  color: var(--lime-deep);
+}
+
+.stats .section-title .accent,
+.gallery-section .section-title .accent {
+  color: var(--lime);
+}
+
+.community .section-title .ink {
+  color: var(--ink);
+  -webkit-text-stroke: 0;
+  text-shadow: 4px 4px 0 var(--white);
+}
+
+.community {
+  background:
+    radial-gradient(circle at 15% 0%, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 45%),
+    linear-gradient(to bottom right, var(--lime) 0%, #ff8a1a 100%);
+}
+
+.hero-chip {
+  font-size: 1.5rem;
+}
+
+.loot__stats strong {
+  font-size: clamp(1.05rem, 11cqi, 1.7rem);
+}
+
+.tweet-x {
+  flex-shrink: 0;
+  color: var(--ink);
+}
+
+.tweet-body {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.tweet-body p + p {
+  margin-top: 0.6rem;
+}
+
+.tweet-body strong {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.35rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--lime-deep);
+}
+
+.tweet-media {
+  position: relative;
+  margin-top: 0.75rem;
+  border: 2px solid var(--ink);
+  overflow: hidden;
+  background: var(--ink);
+}
+
+.tweet-media img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  transition: transform 0.5s var(--ease-out);
+}
+
+.tweet-card:hover .tweet-media img {
+  transform: scale(1.04);
+}
+
+.tweet-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  place-items: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  transform: translate(-50%, -50%);
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  background: var(--lime);
+  color: var(--ink);
+  box-shadow: 3px 3px 0 var(--ink);
+}
+
+.tweet-stats span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.tweet-cta {
+  display: block;
+  margin-top: 1rem;
+  padding: 0.65rem;
+  border: 2px solid var(--ink);
+  background: var(--lime);
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink);
+  transition: background 0.2s, color 0.2s;
+}
+
+.tweet-card:hover .tweet-cta {
+  background: var(--ink);
+  color: var(--lime);
+}
+
+.gallery-item figcaption {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--white);
+  text-shadow: 2px 2px 0 var(--ink);
+}
+
+@media (max-width: 480px) {
+  .hero-copy .hero-brand {
+    font-size: 2.9rem;
+    -webkit-text-stroke-width: 2px;
+    text-shadow: 3px 3px 0 var(--ink);
   }
 }
